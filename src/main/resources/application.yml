@@ -1,0 +1,37 @@
+spring:
+  # 启用开发环境
+  profiles:
+    active: developer
+  # 配置druid数据源
+  datasource:
+    username: root
+    password: Zhy!!root04
+    url: jdbc:mysql://www.wdu4.cn:3306/wdu4_movie?useSSL=false&useUnicode=true&characterEncoding=utf-8
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+  # 配置http图片上传
+  http:
+    multipart:
+      max-file-size: 100Mb
+      maxRequestSize: 100Mb
+  # redis配置
+  redis:
+    password: llf110416
+    host: www.wdu4.cn
+# 配置服务器端口
+server:
+  port: 80
+# 配置mybatis的配置文件路径
+mybatis:
+  config-location: classpath:mybatis-config.xml
+  mapper-locations: classpath:cn/wdu4/invoicing/mapper/*mapper.xml
+---
+# 开发环境
+spring:
+  profiles: developer
+  #  禁用thymeleaf缓存
+  thymeleaf:
+    cache: false
+    mode: HTML
+server:
+  port: 8080
