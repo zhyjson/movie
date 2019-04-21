@@ -18,13 +18,15 @@ spring:
   redis:
     password: llf110416
     host: www.wdu4.cn
+  # 0号库被invoing项目占用，使用1号库
+    database: 1
 # 配置服务器端口
 server:
   port: 80
 # 配置mybatis的配置文件路径
 mybatis:
   config-location: classpath:mybatis-config.xml
-  mapper-locations: classpath:cn/wdu4/invoicing/mapper/*mapper.xml
+  mapper-locations: classpath:cn/wdu4/movie/mapper/*mapper.xml
 ---
 # 开发环境
 spring:
